@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechSubxBD License Admin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="panel">
+      <div class="brand">
+        <img src="assets/logo-master-lovable-square.png" alt="">
+        <div>
+          <h1>TechSubxBD License Admin</h1>
+          <p>Create Supabase licenses fast.</p>
+        </div>
+      </div>
+
+      <label>
+        Function URL
+        <input id="function-url" value="https://nawuvricvqyubjjmdoef.supabase.co/functions/v1/generate-license">
+      </label>
+
+      <label>
+        Admin token
+        <input id="admin-token" type="password" placeholder="LICENSE_ADMIN_TOKEN">
+      </label>
+
+      <div class="grid">
+        <label>
+          Customer name
+          <input id="user-name" placeholder="Customer name">
+        </label>
+
+        <label>
+          Prefix
+          <input id="prefix" value="TSBD">
+        </label>
+      </div>
+
+      <label>
+        Plan
+        <select id="plan">
+          <option value="10_minutes">10 minutes</option>
+          <option value="1_day">1 day</option>
+          <option value="7_days">7 days</option>
+          <option value="15_days">15 days</option>
+          <option value="30_days">30 days</option>
+          <option value="lifetime">Lifetime</option>
+        </select>
+      </label>
+
+      <div class="actions">
+        <button id="create-btn">Create License</button>
+        <button id="recent-btn" class="secondary">Load Recent</button>
+      </div>
+
+      <div id="result" class="result" hidden></div>
+    </section>
+
+    <section class="panel recent">
+      <h2>Recent Licenses</h2>
+      <div id="recent-list" class="recent-list">
+        <p class="empty">No licenses loaded.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

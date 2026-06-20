@@ -1,0 +1,154 @@
+:root {
+  --bg: #07100f;
+  --panel: #0d1b2d;
+  --line: #1e3554;
+  --text: #edf7ff;
+  --muted: #90a9c7;
+  --green: #18d17b;
+  --blue: #1451be;
+  --red: #ff6262;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  width: min(1080px, calc(100% - 32px));
+  margin: 28px auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.brand img {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+}
+
+h1, h2, p { margin: 0; }
+h1 { font-size: 22px; }
+h2 { font-size: 18px; margin-bottom: 14px; }
+p { color: var(--muted); margin-top: 5px; }
+
+label {
+  display: block;
+  margin: 14px 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+input, select {
+  width: 100%;
+  margin-top: 7px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 13px 14px;
+  background: #0a1525;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  gap: 14px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 13px 18px;
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #102642;
+  border: 1px solid var(--line);
+}
+
+.result {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #071525;
+  word-break: break-all;
+}
+
+.result.success { border-color: rgba(24, 209, 123, 0.5); }
+.result.error { border-color: rgba(255, 98, 98, 0.55); color: var(--red); }
+
+.license-key {
+  display: block;
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--green);
+}
+
+.recent-list {
+  display: grid;
+  gap: 10px;
+}
+
+.item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #0a1525;
+}
+
+.item strong {
+  display: block;
+  color: var(--green);
+  word-break: break-all;
+}
+
+.item span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.empty {
+  color: var(--muted);
+}
+
+@media (max-width: 800px) {
+  .app, .grid {
+    grid-template-columns: 1fr;
+  }
+}
