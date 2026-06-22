@@ -9,7 +9,9 @@
   --red: #ff6262;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -47,10 +49,25 @@ body {
   border-radius: 8px;
 }
 
-h1, h2, p { margin: 0; }
-h1 { font-size: 22px; }
-h2 { font-size: 18px; margin-bottom: 14px; }
-p { color: var(--muted); margin-top: 5px; }
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+p {
+  color: var(--muted);
+  margin-top: 5px;
+}
 
 label {
   display: block;
@@ -60,7 +77,8 @@ label {
   font-weight: 700;
 }
 
-input, select {
+input,
+select {
   width: 100%;
   margin-top: 7px;
   border: 1px solid var(--line);
@@ -87,10 +105,19 @@ button {
   border: none;
   border-radius: 8px;
   padding: 13px 18px;
-  background: linear-gradient(135deg, var(--blue), var(--green));
+  background: linear-gradient(
+    135deg,
+    var(--blue),
+    var(--green)
+  );
   color: white;
   font-weight: 800;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-1px);
 }
 
 button.secondary {
@@ -107,8 +134,14 @@ button.secondary {
   word-break: break-all;
 }
 
-.result.success { border-color: rgba(24, 209, 123, 0.5); }
-.result.error { border-color: rgba(255, 98, 98, 0.55); color: var(--red); }
+.result.success {
+  border-color: rgba(24, 209, 123, 0.5);
+}
+
+.result.error {
+  border-color: rgba(255, 98, 98, 0.55);
+  color: var(--red);
+}
 
 .license-key {
   display: block;
@@ -126,7 +159,7 @@ button.secondary {
 .item {
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 12px;
+  padding: 14px;
   background: #0a1525;
 }
 
@@ -134,13 +167,36 @@ button.secondary {
   display: block;
   color: var(--green);
   word-break: break-all;
+  font-size: 15px;
 }
 
 .item span {
   display: block;
-  margin-top: 6px;
+  margin-top: 8px;
   color: var(--muted);
   font-size: 13px;
+}
+
+.license-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.license-actions button {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.status-active {
+  color: var(--green);
+  font-weight: bold;
+}
+
+.status-blocked {
+  color: var(--red);
+  font-weight: bold;
 }
 
 .empty {
@@ -148,7 +204,22 @@ button.secondary {
 }
 
 @media (max-width: 800px) {
-  .app, .grid {
+
+  .app,
+  .grid {
     grid-template-columns: 1fr;
   }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .license-actions {
+    flex-direction: column;
+  }
+
+  .license-actions button {
+    width: 100%;
+  }
+
 }
